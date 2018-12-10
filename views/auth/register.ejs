@@ -1,0 +1,151 @@
+<% include ../layout/header %>
+<% include ../layout/menu %>
+
+<div class="breadcrumbs-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <nav class="woocommerce-breadcrumb">
+                    <a href="/">Home</a>
+                    <span class="separator">/</span> Register
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="entry-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="entry-title">Register</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="register-page-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="inputbox">
+                    <div class="form-login-error" style="display: none; text-align: center;">
+                        <p id="loginResponse" style="color: red"></p>
+                    </div>
+                </div>
+                <form class="form-register">
+                    <fieldset>
+                        <legend>Your Personal Details</legend>
+                        <div class="form-group d-md-flex align-items-md-center">
+                            <label class="control-label col-md-2"><span class="require">*</span>First Name</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" name="first_name" id="first_name" placeholder="First Name">
+                            </div>
+                        </div>
+                        <div class="form-group d-md-flex align-items-md-center">
+                            <label class="control-label col-md-2"><span class="require">*</span>Last Name</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Last Name">
+                            </div>
+                        </div>
+                        <div class="form-group d-md-flex align-items-md-center">
+                            <label class="control-label col-md-2"><span class="require">*</span>Enter you email address here...</label>
+                            <div class="col-md-10">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email address here...">
+                            </div>
+                        </div>
+                        <div class="form-group d-md-flex align-items-md-center">
+                            <label class="control-label col-md-2"><span class="require">*</span>Phone Number</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" name="phone" id="phone" placeholder="Phone Number">
+                            </div>
+                        </div>
+                        <div class="form-group d-md-flex align-items-md-center">
+                            <label class="control-label col-md-2"><span class="require">*</span>City</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" name="city" id="city" placeholder="City">
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Your Password</legend>
+                        <div class="form-group d-md-flex align-items-md-center">
+                            <label class="control-label col-md-2"><span class="require">*</span>Password:</label>
+                            <div class="col-md-10">
+                                <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="form-group d-md-flex align-items-md-center">
+                            <label class="control-label col-md-2"><span class="require">*</span>Confirm Password</label>
+                            <div class="col-md-10">
+                                <input type="password" class="form-control" name="conf_password" id="conf_password" placeholder="Confirm password">
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="terms">
+                        <div class="float-md-right">
+                            <input type="submit" value="Continue" id="register-form" class="return-customer-btn">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer-area">
+    <div class="newsletter-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="footer-social">
+                        <ul class="social-icons">
+                            <li><a class="facebook social-icon" href="#" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a class="twitter social-icon" href="#" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li><a class="instagram social-icon" href="#" title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                            <li><a class="linkedin social-icon" href="#" title="Linkedin" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a class="rss social-icon" href="#" title="Rss" target="_blank"><i class="fa fa-rss"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-policy-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-lg-3 col-md-3 col-xs-12 foo-pol">
+                    <div class="footer-policy-box">
+                        <p><i class="icon ion-reply-all"></i></p>
+                        <h3>Free Returns</h3>
+                        <p>Currently over 50 countries qualify for express international shipping.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 col-md-3 col-xs-12 foo-pol">
+                    <div class="footer-policy-box">
+                        <p><i class="icon ion-ribbon-b"></i></p>
+                        <h3>Customer Support</h3>
+                        <p>We really care about you and your website as much as you do.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 col-md-3 col-xs-12 foo-pol">
+                    <div class="footer-policy-box">
+                        <p><i class="icon ion-android-plane"></i></p>
+                        <h3>International Shipping</h3>
+                        <p>Currently over 50 countries qualify for express international shipping.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 col-md-3 col-xs-12 foo-pol">
+                    <div class="footer-policy-box">
+                        <p><i class="icon ion-android-star"></i></p>
+                        <h3>Dedicated Service</h3>
+                        <p>Consult our specialists for help with an order, customization, or design advice.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+<% include ../layout/footer %>
+<script src="/javascript/register.js"></script>
