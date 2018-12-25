@@ -4,10 +4,10 @@ const roleModel = require('../../model/roleModel');
 const async = require('async');
 
 module.exports = {
-    getAddCategory: (request, response) => {
+    getAddRole: (request, response) => {
         response.render('role/addRole');
     },
-    createCategory: (request, response) => {
+    createRole: (request, response) => {
         roleModel.createRoles(request.body, (err, result) => {
             if (err) {
                 console.log(err);
@@ -16,7 +16,7 @@ module.exports = {
             }
         });
     },
-    getAllCategories: (request, response) => {
+    getAllRoles: (request, response) => {
         async.parallel({
             roles: (callback) => {
                 roleModel.getAllRoles()
@@ -59,10 +59,10 @@ module.exports = {
             });
         });
     },
-    updateCategoryById: (request, response) => {
+    updateRoleById: (request, response) => {
         console.log('updateCategoryById');
     },
-    postCategoryById: (request, response) => {
+    postRoleById: (request, response) => {
         console.log('postCategoryById');
     }
 }

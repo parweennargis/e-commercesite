@@ -9,6 +9,7 @@ const adminDashboardController = require('../controller/admin/dashboard');
 const cartController = require('../controller/cart/cart');
 const productController = require('../controller/product/product');
 const roleController = require('../controller/role/roleController');
+const categoryController = require('../controller/category/categoryController')
 
 // Home Page
 routes.get('/', indexController.index);
@@ -36,11 +37,19 @@ routes.get('/product/:id', productController.getProductDetailById);
 routes.get('/admin/dashboard', adminDashboardController.getDashboard);
 
 // Role Routes
-routes.get('/add/category', roleController.getAddCategory);
-routes.post('/category', roleController.createCategory);
-routes.get('/all/categories', roleController.getAllCategories);
-routes.get('/category/:id', roleController.getRoleById);
-routes.put('/category/:id', roleController.updateCategoryById);
-routes.post('/category/:id', roleController.postCategoryById);
+routes.get('/add/role', roleController.getAddRole);
+routes.post('/role', roleController.createRole);
+routes.get('/all/roles', roleController.getAllRoles);
+routes.get('/role/:id', roleController.getRoleById);
+routes.put('/role/:id', roleController.updateRoleById);
+routes.post('/role/:id', roleController.postRoleById);
+
+// Category Routes
+routes.get('/add/category', categoryController.getAddCategory);
+routes.post('/category', categoryController.createCategory);
+routes.get('/all/categories', categoryController.getAllCategories);
+routes.get('/category/:id', categoryController.getCategoryById);
+routes.post('/category/:id', categoryController.postCategoryById);
+routes.get('/category/delete/:id', categoryController.deleteCategoryById);
 
 module.exports = routes;
