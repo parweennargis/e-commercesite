@@ -4,7 +4,7 @@ exports.setBaseUrl = (req, res, next) => {
     res.locals.HOST = req.protocol + '://' + req.get('host');
     res.locals.PATH = req.originalUrl;
     // console.log(req);
-    console.log(res.locals.PATH);
+    // console.log(res.locals.PATH);
 
     next();
 }

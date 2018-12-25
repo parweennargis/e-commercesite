@@ -7,22 +7,24 @@ const Roles = (roles) => {
     this.status = status;
 }
 
-Roles.getAllRoles = (result) => {
-    sql.query("Select * from roles", (err, res) => {
-        if (err) {
-            result(null, err);
-        } else {
-            result(null, res);
-        }
+Roles.getAllRoles = () => {
+    return new Promise((resolve, reject) => {
+        sql.query("Select * from roles", (err, results) => {
+            if (err) {
+                reject(err);
+            }
+            resolve(results);
+        });
     });
 }
-Roles.getRolesById = (roleId, result) => {
-    sql.query("Select * from roles where id = ?", roleId, (err, res) => {
-        if (err) {
-            result(null, err);
-        } else {
-            result(null, res);
-        }
+Roles.getRolesById = (roleId) => {
+    return new Promise((resolve, reject) => {
+        sql.query("Select * from roles where id = ?", roleId, (err, result) => {
+            if (err) {
+                reject(err);
+            }
+            resolve(result);
+        });
     });
 }
 Roles.deleteRolesById = (roleId, result) => {
@@ -43,7 +45,7 @@ Roles.getUsedRoleById = (roleId, result) => {
         }
     });
 }
-Roles.saveRoles = (data, result) => {
+Roles.createRoles = (data, result) => {
     sql.query("Insert into roles set ?", data, (err, res) => {
         if (err) {
             result(null, err);
@@ -61,3 +63,5 @@ Roles.updateRoleById = (roleId, data, result) => {
         }
     });
 }
+
+module.exports = Roles;

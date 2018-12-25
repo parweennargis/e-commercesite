@@ -15,7 +15,7 @@ module.exports = {
                 console.log('error in finding users');
             } else {
                 if (res.length > 0) {
-                    console.log(res[0].password);
+                    // console.log(res[0].password);
                     if (bcrypt.compareSync(password, res[0].password)) {
                         // make seesion active for user and redirect to dashboard
 

@@ -1,0 +1,68 @@
+<% include ./../admin/layout/header %>
+
+<div class="breadcrumbs">
+    <div class="col-sm-4">
+        <div class="page-header float-left">
+            <div class="page-title">
+                <h1>Dashboard</h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-8">
+        <div class="page-header float-right">
+            <div class="page-title">
+                <ol class="breadcrumb text-right">
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Forms</a></li>
+                    <li class="active">Basic</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content mt-3">
+    <div class="animated fadeIn">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="card">
+                
+                <div class="card-body">
+                  <!-- Credit Card -->
+                  <div id="pay-invoice">
+                      <div class="card-body">
+                          <div class="card-title">
+                              <h3 class="text-center">Update Role <%= roleData %></h3>
+                          </div>
+                          <hr>
+                          <form action="/category/<%= roleData.id %>" method="POST">
+                              <div class="form-group text-center">
+                                  <ul class="list-inline">
+                                      <li class="list-inline-item"><i class="text-muted fa fa-cc-visa fa-2x"></i></li>
+                                      <li class="list-inline-item"><i class="fa fa-cc-mastercard fa-2x"></i></li>
+                                      <li class="list-inline-item"><i class="fa fa-cc-amex fa-2x"></i></li>
+                                      <li class="list-inline-item"><i class="fa fa-cc-discover fa-2x"></i></li>
+                                  </ul>
+                              </div>
+                              <input type="hidden" name="_method" value="PUT">
+                              <div class="form-group">
+                                  <label for="cc-payment" class="control-label mb-1">Role Name</label>
+                                  <input name="name" type="text" value="<%= roleData.name %>" class="form-control" placeholder="Enter Role Name">
+                              </div>
+                              <div>
+                                  <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
+                                      <i class="fa fa-lock fa-lg"></i>&nbsp;
+                                      <span id="payment-button-amount">Update Role</span>
+                                  </button>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+<% include ./../admin/layout/footer %>

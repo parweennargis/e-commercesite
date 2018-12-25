@@ -37,5 +37,10 @@ routes.get('/admin/dashboard', adminDashboardController.getDashboard);
 
 // Role Routes
 routes.get('/add/category', roleController.getAddCategory);
+routes.post('/category', roleController.createCategory);
+routes.get('/all/categories', roleController.getAllCategories);
+routes.get('/category/:id', roleController.getRoleById);
+routes.put('/category/:id', roleController.updateCategoryById);
+routes.post('/category/:id', roleController.postCategoryById);
 
 module.exports = routes;
