@@ -2,14 +2,15 @@
 
 const express = require('express');
 const routes = express.Router();
-const loginController = require('../controller/auth/login');
 const indexController = require('../controller/index');
-const registerController = require('../controller/auth/register');
-const adminDashboardController = require('../controller/admin/dashboard');
 const cartController = require('../controller/cart/cart');
+const loginController = require('../controller/auth/login');
+const registerController = require('../controller/auth/register');
 const productController = require('../controller/product/product');
 const roleController = require('../controller/role/roleController');
-const categoryController = require('../controller/category/categoryController')
+const adminDashboardController = require('../controller/admin/dashboard');
+const categoryController = require('../controller/category/categoryController');
+const subCategoryController = require('../controller/category/subCategoryController');
 
 // Home Page
 routes.get('/', indexController.index);
@@ -51,5 +52,13 @@ routes.get('/all/categories', categoryController.getAllCategories);
 routes.get('/category/:id', categoryController.getCategoryById);
 routes.post('/category/:id', categoryController.postCategoryById);
 routes.get('/category/delete/:id', categoryController.deleteCategoryById);
+
+// Sub Category Routes
+routes.get('/all/sub-categories', subCategoryController.getAllSubCategories);
+routes.get('/sub-category/:id', subCategoryController.getSubCategoryById);
+routes.post('/sub-category/:id', subCategoryController.postSubCategoryById);
+routes.get('/add/sub-category', subCategoryController.getAddSubCategory);
+routes.post('/sub-category', subCategoryController.createSubCategory);
+routes.get('/sub-category/delete/:id', subCategoryController.deleteSubCategoryById);
 
 module.exports = routes;

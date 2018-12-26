@@ -23,23 +23,14 @@ module.exports = {
         });
     },
     getAllCategories: (request, response) => {
-        async.parallel({
-            categories: (callback) => {
-                categoryModel.getAllActiveCategory()
-                    .then((result) => {
-                        callback(null, result);
-                    })
-                    .catch((err) => {
-                        callback(err);
-                    });
+        categoryModel.getAllActiveCategory((err, result) => {
+            if (err) {
+                console.log(err);
+            } else {
+                response.render('category/viewCategories', {
+                    'categories': JSON.parse(JSON.stringify(result))
+                });
             }
-        }, (err, result) => {
-            if(err) {
-                console.log(err); 
-            }
-            response.render('category/viewCategories', {
-                'categories': JSON.parse(JSON.stringify(result.categories))
-            });
         });
     },
     getCategoryById: (request, response) => {

@@ -6,14 +6,13 @@ const Categories = (Categories) => {
     this.name = name;
     this.status = status;
 }
-Categories.getAllActiveCategory = () => {
-    return new Promise((resolve, reject) => {
-        sql.query("select * from categories where status = 1", (err, result) => {
-            if (err) {
-                reject(err);
-            }
-            resolve(result);
-        });
+Categories.getAllActiveCategory = (result) => {
+    sql.query("select * from categories where status = 1", (err, res) => {
+        if (err) {
+            result(err);
+        } else {
+            result(null, res);
+        }
     });
 }
 Categories.getCategoryById = (categoryId) => {
@@ -34,14 +33,6 @@ Categories.deleteCategoryById = (categoryId, result) => {
             result(null, result);
         }
     });
-    // return new Promise((resolve, reject) => {
-    //     sql.query("delete from categories where id= ?", categoryId, (err, res) => {
-    //         if (err) {
-    //             reject(err);
-    //         }
-    //         resolve(res);
-    //     });
-    // });
 }
 Categories.createCategory = (data) => {
     return new Promise((resolve, reject) => {
