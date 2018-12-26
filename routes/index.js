@@ -8,8 +8,9 @@ const loginController = require('../controller/auth/login');
 const registerController = require('../controller/auth/register');
 const productController = require('../controller/product/product');
 const roleController = require('../controller/role/roleController');
-const adminDashboardController = require('../controller/admin/dashboard');
+const vendorController = require('../controller/vendor/vendorController');
 const categoryController = require('../controller/category/categoryController');
+const adminDashboardController = require('../controller/admin/dashboardController');
 const subCategoryController = require('../controller/category/subCategoryController');
 
 // Home Page
@@ -60,5 +61,13 @@ routes.post('/sub-category/:id', subCategoryController.postSubCategoryById);
 routes.get('/add/sub-category', subCategoryController.getAddSubCategory);
 routes.post('/sub-category', subCategoryController.createSubCategory);
 routes.get('/sub-category/delete/:id', subCategoryController.deleteSubCategoryById);
+
+// Vendor Routes
+routes.get('/all/vendors', vendorController.getAllVendors);
+routes.get('/vendor/:id', vendorController.getVendorById);
+routes.post('/vendor/:id', vendorController.postVendorById);
+routes.get('/add/vendor', vendorController.getAddVendor);
+routes.post('/vendor', vendorController.createVendor);
+routes.get('/vendor/delete/:id', vendorController.deleteVendorById);
 
 module.exports = routes;

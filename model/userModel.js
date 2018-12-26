@@ -16,7 +16,7 @@ var Users = (users) => {
 Users.getAllUsers = (roleId, result) => {
     sql.query("Select * from users where role_id = ?", roleId, (err, res) => {
         if (err) {
-            result(null, err);
+            result(err);
         } else {
             result(null, res);
         }
@@ -49,10 +49,19 @@ Users.getUserByEmail = (email, result) => {
         }
     });
 }
-Users.updateUserById = (userId, data, result) => {
-    sql.query("Update users set ?", data, " where id = ?", userId, (err, res) => {
+Users.getUserById = (id, result) => {
+    sql.query("Select * from users where id = ?", id, (err, res) => {
         if(err) {
-            result(null, err);
+            result(err);
+        } else {
+            result(null, res);
+        }
+    });
+}
+Users.updateUserById = (userId, data, result) => {
+    sql.query("Update users set ? where id = ?", [data, userId], (err, res) => {
+        if(err) {
+            result(err);
         } else {
             result(null, res);
         }
@@ -61,7 +70,7 @@ Users.updateUserById = (userId, data, result) => {
 Users.deleteUserById = (userId, result) => {
     sql.query("delete from users where id = ?", userId, (err, res) => {
         if(err) {
-            result(null, err);
+            result(err);
         } else {
             result(null, res);
         }
