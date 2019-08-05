@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
-var app = express();
+const app = express();
 
 const middleware = require('./middleware/middleware');
 const routes = require('./routes/index');
