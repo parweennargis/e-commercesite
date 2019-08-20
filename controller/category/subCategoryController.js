@@ -1,7 +1,7 @@
 'use strict';
 
-const subCategoryModel = require('../../model/subCategoriesModel');
-const categoryModel = require('../../model/categoriesModel');
+const subCategoryModel = require('../../repository/subCategoriesModel');
+const categoryModel = require('../../repository/CategoryRepository');
 
 module.exports = {
     getAllSubCategories: (request, response) => {

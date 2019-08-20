@@ -1,6 +1,6 @@
 'use strict';
 
-const CartModel = require('../../model/cartModel');
+const CartModel = require('../../repository/cartModel');
 
 module.exports = {
     getAllCarts: (request, response) => {

@@ -1,6 +1,6 @@
 'use strict';
 
-const roleModel = require('../../model/roleModel');
+const roleModel = require('../../repository/roleModel');
 const async = require('async');
 
 module.exports = {

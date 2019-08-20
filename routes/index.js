@@ -2,6 +2,8 @@
 
 const express = require('express');
 const routes = express.Router();
+const mongo = require('../config/database');
+
 const indexController = require('../controller/index');
 const cartController = require('../controller/cart/cart');
 const loginController = require('../controller/auth/login');

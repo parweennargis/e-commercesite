@@ -1,6 +1,6 @@
 'use strict';
 
-const categoryModel = require('../../model/categoriesModel');
+const categoryModel = require('../../repository/CategoryRepository');
 const async = require('async');
 
 module.exports = {

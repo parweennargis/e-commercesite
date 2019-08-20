@@ -1,6 +1,6 @@
 'use strict';
 
-const userModel = require('../../model/userModel');
+const userModel = require('../../repository/userModel');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 

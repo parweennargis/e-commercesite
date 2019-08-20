@@ -1,7 +1,7 @@
 'use strict';
 
-const ProductModel = require('../../model/productModel');
-const productImageModel = require('../../model/productImageModel');
+const ProductModel = require('../../repository/productModel');
+const productImageModel = require('../../repository/productImageModel');
 const async = require('async');
 
 module.exports = {

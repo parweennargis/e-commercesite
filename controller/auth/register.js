@@ -1,6 +1,6 @@
 'use strict';
 
-const UserModel = require('../../model/userModel');
+const UserModel = require('../../repository/userModel');
 const Validator = require('validatorjs');
 const middleware = require('../../middleware/middleware');
 const bcrypt = require('bcrypt');

@@ -1,6 +1,6 @@
 'use strict';
 
-const UserModel = require('../../model/userModel');
+const UserModel = require('../../repository/userModel');
 const bcrypt = require('bcrypt');
 
 module.exports = {
