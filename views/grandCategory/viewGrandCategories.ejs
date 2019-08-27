@@ -1,0 +1,54 @@
+<% include ./../admin/layout/header %>
+<div class="content mt-3">
+    <div class="animated fadeIn">
+        <div class="row">
+
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <strong class="card-title">Grand Category List</strong>
+                </div>
+                <div class="card-body">
+          <table id="bootstrap-data-table" class="table table-striped table-bordered">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Status</th>
+                <th>Date</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+            <% grandCategories.forEach((category) => { %>
+              <tr>
+                <td><%= category.name %></td>
+                <td><%= category.status %></td>
+                <td><%= category.createdAt %></td>
+                <td>
+                    <a href="/grand-category/<%= category._id %>"><i class="fa fa-edit"></i></a>
+                    <a href="/grand-category/delete/<%= category._id %>"><i class="fa fa-trash"></i></a>
+                </td>
+              </tr>
+            <% })%>
+              
+              
+            </tbody>
+          </table>
+                </div>
+            </div>
+        </div>
+
+
+        </div>
+    </div><!-- .animated -->
+</div><!-- .content -->
+
+
+</div>
+
+<% include ./../admin/layout/footer %>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#bootstrap-data-table-export').DataTable();
+} );
+</script>

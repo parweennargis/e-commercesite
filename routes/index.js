@@ -11,12 +11,25 @@ const registerController = require('../controller/auth/register');
 const productController = require('../controller/product/product');
 const roleController = require('../controller/role/roleController');
 const vendorController = require('../controller/vendor/vendorController');
-const categoryController = require('../controller/category/categoryController');
+const categoryController = require('../controller/categories/categoryController');
 const adminDashboardController = require('../controller/admin/dashboardController');
-const subCategoryController = require('../controller/category/subCategoryController');
+const subCategoryController = require('../controller/categories/subCategoryController');
+const grandCategoryController = require('../controller/categories/grandCategoryController');
+
 
 // Home Page
 routes.get('/', indexController.index);
+
+// Grand category Routes
+routes.get('/add/grand-category', grandCategoryController.getAddCategory);
+routes.post('/grand-category', grandCategoryController.createGrandCategory);
+routes.get('/all/grand-categories', grandCategoryController.getAllGrandCategories);
+routes.get('/grand-category/:id', grandCategoryController.getGrandCategoryById);
+routes.post('/grand-category/:id', grandCategoryController.updateGrandCategoryById);
+routes.get('/grand-category/delete/:id', grandCategoryController.deleteGrandCategoryById);
+
+
+
 
 // Login routes
 routes.get('/login', loginController.getLogin);
@@ -30,9 +43,6 @@ routes.post('/register', registerController.postRegister);
 routes.get('/cart', cartController.getAllCarts);
 routes.delete('/cart/delete/:id', cartController.deleteCart);
 routes.post('checkout-cart', cartController.checkoutCart);
-
-// Contacts Routes
-// routes.get('/contact', );
 
 // Product Routes
 routes.get('/product/:id', productController.getProductDetailById);

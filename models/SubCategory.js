@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 /**
- * Category Schema
+ * Sub Category Schema
  *
  * @author  Nargis Parween <nargislife@gmail.com>
- * @version Category
+ * @version Grand Category
  * @since   27th August, 2019
  */
 
@@ -13,7 +13,7 @@ var options = {
   timestamps: true
 };
 
-const categorySchema = new Schema({
+const subCategorySchema = new Schema({
   name: {
     type: Schema.Types.String,
     trim: true,
@@ -21,10 +21,9 @@ const categorySchema = new Schema({
     required: true
   },
   status: {
-    type: Schema.Types.Boolean,
-    default: true,
-    required: true
+    type: Schema.Types.Number,
+    default: 1
   }
 }, options);
 
-module.exports = mongoose.model('Category', categorySchema);
+module.exports = mongoose.model('SubCategory', subCategorySchema);
